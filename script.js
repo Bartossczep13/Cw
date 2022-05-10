@@ -16,6 +16,20 @@
 
   cw1.addEventListener("click", function () {
     //TODO implement it
+    answer.innerHTML =" LOADING ...";
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(response => response.json())
+      .then(function(data){
+        amswer.innerHML="";
+        for(var i=0;i<data.length;i++)
+          {
+            var div=document.createElement("div");
+            div.innerHTML='<b>UserID:'+data[i]userId+'</b><b>Id:'+data[i].id+
+            '<br><b>title:'+data[i]title+'</b><b>body:'+data[i].body+'</b>';
+            answer.appndChild(div);
+          }
+      }
+         })
   })
 
   cw2.addEventListener("click", function () {
